@@ -5,6 +5,11 @@ public class Empleado {
 	private int antiguedad;
 	private double sueldo;
 	
+	
+	public Empleado() {
+		super();
+	}
+
 	public Empleado(String nombre, int antiguedad) {
 		super();
 		this.nombre = nombre;
