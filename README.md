@@ -13,12 +13,12 @@ Producto
   -   nombre
   -   precio
 
-Clientes
+Cliente
   - Atributos
   -   nombre
   -   listaCompra
   - Funciones
-  -   comprarProducto(Tienda, Producto)
+  -   comprarProducto(Tienda)
   -   double gastoTotal()
 
 Empleado
