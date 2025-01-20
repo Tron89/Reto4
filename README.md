@@ -6,11 +6,13 @@ Tienda
   - Funciones
   -   reponer(int)
   -   vender(int)
+
 Producto
   - Atrbutos
   -   id
   -   nombre
   -   precio
+
 Clientes
   - Atributos
   -   nombre
@@ -18,6 +20,7 @@ Clientes
   - Funciones
   -   comprarProducto(Tienda, Producto)
   -   double gastoTotal()
+
 Empleado
   - Atributos
   -   nombre
