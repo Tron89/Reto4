@@ -76,7 +76,7 @@ public class Tienda {
 			}
 		
 				if (esta=false) {System.out.println("Ese codigo no existe");}
-	
+				if (listaProductos.size()<5) {reponer(5);}
 		
 	}
 	
