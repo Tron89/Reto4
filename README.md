@@ -18,7 +18,7 @@ Cliente
   -   nombre
   -   listaCompra
   - Funciones
-  -   comprarProducto(Tienda)
+  -   comprarProducto(Tienda, Producto)
   -   double gastoTotal()
 
 Empleado
