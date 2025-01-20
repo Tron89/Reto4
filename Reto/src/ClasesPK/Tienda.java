@@ -66,16 +66,17 @@ public class Tienda {
 			return lista;
 		}
 	public void vender(int codigo){
-	
+			boolean esta=false;
 			for (Producto prod : listaProductos) {
 				if (prod.getId() == codigo) {
 					listaProductos.remove(prod);
-					break;
+					esta=true;
+				
 				}
 			}
 		
-				System.out.println("Ese codigo no existe");
-		 while (true);
+				if (esta=false) {System.out.println("Ese codigo no existe");}
+	
 		
 	}
 	
