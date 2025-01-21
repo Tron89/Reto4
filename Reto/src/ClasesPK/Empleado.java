@@ -7,11 +7,11 @@ public class Empleado {
 	
 	
 	public Empleado() {
-		super();
+	
 	}
 
 	public Empleado(String nombre, int antiguedad) {
-		super();
+	
 		this.nombre = nombre;
 		setAntiguedad(antiguedad);
 	}
