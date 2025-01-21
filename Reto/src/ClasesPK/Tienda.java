@@ -6,15 +6,16 @@ import java.util.Random;
 
 
 
+
 public class Tienda {
 	private int id;
 	private String nombre;
-	private Emplado empleado;
+	private Empleado empleado;
 	private List<Producto> listaProductos;
 	public Tienda() {
 		
 	}
-	public Tienda(int id, String nombre, Emplado empleado, List<Producto> listaProductos) {
+	public Tienda(int id, String nombre, Empleado empleado, List<Producto> listaProductos) {
 		
 		this.id = id;
 		this.nombre = nombre;
@@ -33,10 +34,10 @@ public class Tienda {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Emplado getEmpleado() {
+	public Empleado getEmpleado() {
 		return empleado;
 	}
-	public void setEmpleado(Emplado empleado) {
+	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
 	public List<Producto> getListaProductos() {
@@ -48,18 +49,19 @@ public class Tienda {
 	
 	public List<Producto> reponer(int num){
 		Random rnd = new Random();
-		List<Integer> lista2 = new ArrayList<>();
+		//List<Integer> lista2 = new ArrayList<>();
 		List<Producto> lista = new ArrayList<Producto>();
 		int code;
+		boolean esta=true;
 		for (int i=0;i< num;i++) {
 			do {
 				code = rnd.nextInt(10, 100);
-				if (lista2.contains(code)) {
-				} else {
-					break;
+				for (Producto prod : listaProductos) {
+				if (prod.getId()==code) {esta=false;break;} 
 				}
+				if (esta==true) {break;}
 			} while (true);
-			lista2.add(code);
+			//lista2.add(code);
 			Producto p = new Producto(code, "producto " + code, Util.Funciones.redondea(rnd.nextDouble(1, 100)));
 			lista.add(p);
 		}
