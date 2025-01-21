@@ -64,6 +64,7 @@ public class Tienda {
 			//lista2.add(code);
 			Producto p = new Producto(code, "producto " + code, Util.Funciones.redondea(rnd.nextDouble(1, 100)));
 			lista.add(p);
+			listaProductos.add(p);
 		}
 			return lista;
 		}
@@ -81,12 +82,15 @@ public class Tienda {
 				if (listaProductos.size()<5) {reponer(5);}
 		
 	}
-	
 	@Override
 	public String toString() {
-		return "Tienda [id=" + id + ", nombre=" + nombre + "]";
+		return "Tienda [id=" + id + ", nombre=" + nombre + ", empleado=" + empleado + ", listaProductos="
+				+ listaProductos + "]";
+	}
+	
+
 	}
 	
 	
 
-}
+
