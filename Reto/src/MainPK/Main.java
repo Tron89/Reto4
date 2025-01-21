@@ -93,11 +93,21 @@ public class Main {
 			System.out.println(cliente.getListaCompra());
 			break;
 		case 4:
-			for (Tienda t : listaTienda) {
-				System.out.println(t);
-			}
-			System.out.println(" ");
-			int n=Util.Funciones.dimeEntero("Escribe id", sc);
+			int n=0;
+			
+				do {
+					for (Tienda t : listaTienda) {
+						
+					}
+					n=Util.Funciones.dimeEntero("Escribe id", sc);
+					if(n==t.getId()) {
+						System.out.println("encontrado");
+					}
+				} while (n>0);
+			
+			
+			
+			
 			
 			break;
 		case 5:

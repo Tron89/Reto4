@@ -1,35 +1,32 @@
-Tienda
-  - Atributos
-  -   nombre
-  -   gerente
-  -   listaProductos
-  - Funciones
-  -   reponer(int)
-  -   vender(int)
 
-Producto
+Tienda - Roberto
+  - Atributos
+    - nombre
+    - gerente
+    - listaProductos
+  - Funciones
+    - reponer(int)
+    - vender(int)
+
+Producto - Roberto
   - Atrbutos
-  -   id
-  -   nombre
-  -   precio
+    - id
+    - nombre
+    - precio
 
-Cliente
+Cliente - Claudiu
   - Atributos
-  -   nombre
-  -   listaCompra
+    - nombre
+    - listaCompra
   - Funciones
-  -   comprarProducto(Tienda, Producto)
-  -   double gastoTotal()
+    - comprarProducto(Tienda, Producto)
+    - double gastoTotal()
 
-Empleado
+
+Empleado - Claudiu
   - Atributos
-  -   nombre
-  -   antiguedad
-  -   sueldo
+    - nombre
+    - antiguedad
+    - sueldo
 
-Main
-  - Funciones
-  -   usarTienda
-  -   comprar
-  -   mostrarCompras
-  -   realizarQueja
+Main - Jorge
