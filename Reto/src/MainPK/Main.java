@@ -21,9 +21,9 @@ public class Main {
 		for (int i = 1; i <=20; i++) {
 			e=new Empleado("Empleado"+i,r.nextInt(1,21));
 			listaEmp.add(e);
-			System.out.println(e);
+			/*System.out.println(e);*/
 		}
-		System.out.println(" ");
+	
 		
 		//5 tiendas con datos aleatorios, el identificador que no se repita, y asignarle un empleado que cojáis de la lista de empleados. El empleado puede ser generte en dos tiendas o más, no hay que validarlo. Llamar al método reponer de la tienda para añadir entre 5 a 10 productos. 
 		List<Tienda> listaTienda=new ArrayList<Tienda>();
@@ -32,7 +32,7 @@ public class Main {
 		
 		Tienda t=null;
 		Producto p=new Producto();
-		System.out.println("Tiendas:");
+		/*System.out.println("Tiendas:");*/
 		int rand=0;
 		for (int i = 1; i <=5; i++) {
 			listaProducto=new ArrayList<Producto>();
@@ -47,9 +47,9 @@ public class Main {
 				}
 			} while (true);
 			
-			System.out.println(t);
+			/*System.out.println(t);*/
 		}
-		System.out.println(" ");
+	
 		//1 cliente con datos aleatorios
 		Cliente c=new Cliente("Cliente");
 		
@@ -57,13 +57,12 @@ public class Main {
 		System.out.println("Cliente:");
 		System.out.println(c.getNombre());*/
 		
-		System.out.println(" ");
 		//menu
 		int menu=0;
 		do {
 			menu();
 			menu=Util.Funciones.dimeEntero("Elige menu", sc);
-			menu2(menu,listaTienda,c,sc);
+			menu2(menu,listaTienda,c,sc,listaEmp);
 			
 		} while (menu!=5);
 		
@@ -78,15 +77,14 @@ public class Main {
 		System.out.println("4. Realizar una queja");
 		System.out.println("5. Salir");
 	}
-	public static void menu2(int menu,List<Tienda> listaTienda,Cliente cliente,Scanner sc) {
+	public static void menu2(int menu,List<Tienda> listaTienda,Cliente cliente,Scanner sc,List<Empleado> e) {
 		switch (menu) {
 		case 1:
-			for (Tienda t : listaTienda) {
-				System.out.println(t);
-			}
-			System.out.println(" ");
+			mostrarTienda(listaTienda);
 			break;
 		case 2:
+			mostrarTienda(listaTienda);
+			
 			cliente.comprarProducto(listaTienda.get(1), listaTienda.get(1).getListaProductos().get(1));
 			break;
 		case 3:
@@ -94,24 +92,27 @@ public class Main {
 			break;
 		case 4:
 			int n=0;
-			
+			boolean b=false;
+			Random r=new Random();
 				do {
 					for (Tienda t : listaTienda) {
-						
+						if(n==t.getId()) {
+							b=true;
+							t.setEmpleado(e.get(r.nextInt(1,6)));
+						}
 					}
 					n=Util.Funciones.dimeEntero("Escribe id", sc);
-					if(n==t.getId()) {
-						System.out.println("encontrado");
-					}
-				} while (n>0);
-			
-			
-			
-			
+				} while (b);
 			
 			break;
 		case 5:
 			break;
 		}
+	}
+	public static void mostrarTienda(List<Tienda> listaTienda) {
+		for (Tienda t : listaTienda) {
+			System.out.println(t);
+		}
+		System.out.println(" ");
 	}
 }
