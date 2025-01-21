@@ -47,10 +47,10 @@ public class Tienda {
 		this.listaProductos = listaProductos;
 	}
 	
-	public List<Producto> reponer(int num){
+	public void reponer(int num){
 		Random rnd = new Random();
 		//List<Integer> lista2 = new ArrayList<>();
-		List<Producto> lista = new ArrayList<Producto>();
+
 		int code;
 		boolean esta=true;
 		for (int i=0;i< num;i++) {
@@ -63,11 +63,10 @@ public class Tienda {
 			} while (true);
 			//lista2.add(code);
 			Producto p = new Producto(code, "producto " + code, Util.Funciones.redondea(rnd.nextDouble(1, 100)));
-			lista.add(p);
+			
 			listaProductos.add(p);
 		}
-			return lista;
-		}
+	}
 	public void vender(int codigo){
 			boolean esta=false;
 			for (Producto prod : listaProductos) {
