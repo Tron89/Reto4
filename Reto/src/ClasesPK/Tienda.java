@@ -81,11 +81,12 @@ public class Tienda {
 				if (listaProductos.size()<5) {reponer(5);}
 		
 	}
-	
 	@Override
 	public String toString() {
-		return "Tienda [id=" + id + ", nombre=" + nombre + "]";
+		return "Tienda [id=" + id + ", nombre=" + nombre + ", empleado=" + empleado + ", listaProductos="
+				+ listaProductos + "]";
 	}
+	
 	
 	
 
